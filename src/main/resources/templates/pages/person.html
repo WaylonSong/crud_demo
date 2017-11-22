@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>company</title>
+	<link rel="stylesheet" href="/css/newStyle.css"/>
+</head>
+<body>
+  <div id="layout"></div>
+</body>
+<script type="text/javascript" src="/js/menu.js"></script>
+<script type="text/javascript">
+//层级，｛标题，URL｝
+    var pageParas ={
+      columns:[
+         {
+           title: 'firstName',
+           dataIndex: 'firstName',
+           type:"input",
+           notNull:true
+         },{
+            title: 'lastName',
+            dataIndex: 'lastName',
+            type:"input",
+            notNull:true
+          },{
+            title: 'email',
+            dataIndex: 'email',
+            type:"input",
+            notNull:true
+          },{
+            title: 'gender',
+            dataIndex: 'gender',
+            type:"input",
+            notNull:true
+          }
+      ],
+      resourceUrl:"/api/persons", //crud
+      listUrl:"/api/persons",  //http://localhost:8083/api/purchaseRecords/search/findByUsername?username=swl
+      title : "人员名录",
+      uploadUrl:'/api/upload/',//文件上传
+      deleteUrl: "/api/delete/person",//单数
+      defaultOpenKeys:['demo'],
+      defaultSelectedKeys:['人员名录'],
+    }
+</script>
+<script src="/js/commonV3.js"></script>
+<script src="/js/crudLayout-bundle.js"></script>
+</html>

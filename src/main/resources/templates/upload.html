@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<h2>Spring Boot多文件上传示例(使用AJAX)</h2>
+
+<form method="POST" enctype="multipart/form-data" id="fileUploadForm">
+    <input type="text" name="file"/><br/><br/>
+    <input type="file" name="files"/><br/><br/>
+    <input type="submit" value="提交" id="btnSubmit"/>
+    <img src="/data/1510553746000.jpg"  alt="上海鲜花港 - 郁金香" />
+</form>
+
+<h1>Ajax提交结果：</h1>
+<pre>
+    <span id="result"></span>
+</pre>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script type="text/javascript" src="/js/main.js"></script>
+
+</body>
+</html>

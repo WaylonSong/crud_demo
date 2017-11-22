@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>company</title>
+	<link rel="stylesheet" href="/css/newStyle.css"/>
+</head>
+<body>
+  <div id="layout"></div>
+</body>
+<script type="text/javascript">
+    var selector = {
+      name:["南岗区","香坊区","道里区","道外区","松北区","平房区"]
+    }
+    var radio = {
+      name:["完成","进行中","待完成"]
+    }
+    var navTree=[
+          {name:"水果",children:[{name:"苹果",link:"/curd"},{name:"香蕉",link:"/curd2"},{name:"葡萄",link:"#"}]},
+          {name:"蔬菜",children:[{name:"辣椒",link:"/curd2"},{name:"茄子",link:"#"},{name:"柿子",link:"#"}]},
+    ]
+    var pageParas ={
+       columns:[
+        {
+          title: '企业地址',
+          dataIndex: 'enterpriseaddress',
+          type:"input",  
+          notNull:true
+        },{
+          title: '在职人数',
+          dataIndex: 'incumbency',
+          type:"inputNumber",  
+          notNull:true
+        },{
+          title: '种植作物',
+          dataIndex: 'name',
+          type:"input",
+          hiddenInAdd:true,  //在添加的时候隐藏
+          hiddenInList: true, //在table表格里隐藏
+          notNull:true
+        },{
+          title: '下拉框',
+          dataIndex: 'select',
+          type:"select",    //下拉框
+          options:selector.name,
+          notNull:true
+        },{
+          title: '在职人数',
+          dataIndex: 'aaaa',
+          type:"date",  
+          notNull:true
+        },{
+          title: '单选按钮',
+          dataIndex: 'radio',
+          type:"radio",    //单选按钮
+          options:radio.name,
+          notNull:true
+        }    
+        ,{
+          title: '说明书',
+          dataIndex: 'productUrl',
+          type:"file",    //文件
+          fileTypeList:".doc,.docx,.pdf,.ppt", //文件类型
+        },{
+          title: '发票照片',
+          dataIndex: 'invoiceUrl',
+          type:"image", //图片
+          fileTypeList:".png,.jpg,.jpeg,.gif,.bmp,.icon", //图片类型
+        }
+      ],  
+      resourceUrl:"http://192.168.3.2:8083/api/enterpriseDirectories", 
+      listUrl:"http://192.168.3.2:8083/api/enterpriseDirectories", 
+      title : "标题",
+      uploadUrl:'http://192.168.3.2:8083/api/upload/',
+      deleteUrl: "http://192.168.3.2:8083/api/delete/enterpriseDirectories",
+      defaultSelectedKeys:['苹果'],
+      defaultOpenKeys:['水果']
+    } 
+</script>
+<script src="/js/commonV3.js"></script>
+<script src="/js/crudLayout-bundle.js"></script>
+</html>

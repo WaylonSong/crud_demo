@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>company</title>
+	<link rel="stylesheet" href="/css/newStyle.css"/>
+</head>
+<body>
+  <div id="layout"></div>
+</body>
+<script type="text/javascript">
+//层级，｛标题，URL｝
+
+    var sider=["主页","一级","二级","三级"];
+    var selector = {
+      name:["南岗区","香坊区","道里区","道外区","松北区","平房区"]
+    }
+    var radio = {
+      name:["完成","进行中","待完成"]
+    }
+    var checkbox = {
+      name:["优","良","中","差","不及格","0分"]
+    }
+    var pageParas ={
+       columns:[
+        // {
+        //   title: '企业名称',
+        //   dataIndex: 'enterpriseName',
+        //   key: 'enterpriseName',
+        //   type:"input",
+        //   notNull:true
+        // },{
+        //   title: '经营范围',
+        //   dataIndex: 'businessScope',
+        //   key: 'businessScope',
+        //   type:"input",
+        //   notNull:true
+        // },{
+        //   title: '企业地址',
+        //   dataIndex: 'enterpriseaddress',
+        //   key: 'enterpriseaddress',
+        //   type:"input",
+        //   notNull:true
+        // },{
+        //   title: '成立时间',
+        //   dataIndex: 'establishmentime',
+        //   key: 'establishmentime',
+        //   type:"date",
+        //   notNull:true
+        // },{
+        //   title: '联系人',
+        //   dataIndex: 'contacts',
+        //   key: 'contacts',
+        //   type:"input",
+        //   notNull:true
+        // },{
+        //   title: '联系方式',
+        //   dataIndex: 'phone',
+        //   key: 'phone',
+        //   type:"input",
+        //   notNull:true
+        // },{
+        //   title: '占地面积',
+        //   dataIndex: 'areaCovered',
+        //   key: 'areaCovered',
+        //   type:"input",
+        //   notNull:true
+        // },{
+        //   title: '规模',
+        //   dataIndex: 'scale',
+        //   key: 'scale',
+        //   type:"input",
+        //   notNull:true
+        // },{
+        //   title: '总投资',
+        //   dataIndex: 'totalInvestment',
+        //   key: 'totalInvestment',
+        //   type:"inputNumber",
+        //   notNull:true
+        // },{
+        //   title: '在职人数',
+        //   dataIndex: 'incumbency',
+        //   key: 'incumbency',
+        //   type:"inputNumber",
+        //   notNull:true
+        // },{
+        //   title: ' 种植面积',
+        //   dataIndex: 'plantingArea',
+        //   key: 'plantingArea',
+        //   type:"input",
+        //   notNull:true
+        // },{
+        //   title: '种植作物',
+        //   dataIndex: 'raiseCrops',
+        //   key: 'raiseCrops',
+        //   type:"input",
+        //   notNull:true
+        // }
+        {
+          title: '种植作物',
+          dataIndex: 'name',
+          key: 'name',
+          type:"input",
+          hiddenInList: true,
+          notNull:true
+        },{
+          title: '种植时间',
+          dataIndex: 'createTime',
+          key: 'createTime',
+          type:"date",
+          notNull:true
+        }
+       ,{
+          title: '发票照片',
+          dataIndex: 'invoiceUrl',
+          key: 'invoiceUrl',
+          type:"image",
+          fileTypeList:"png,jpg,jpeg,gif,bmp,icon",
+        }
+        ,{
+          title: '说明书',
+          dataIndex: 'productUrl',
+          key: 'productUrl',
+          type:"file",
+          fileTypeList:"doc,docx,pdf,ppt",
+        },
+      ],  
+      // resourceUrl:"http://192.168.3.2:8083/api/enterpriseDirectories", 
+      // listUrl:"http://192.168.3.2:8083/api/enterpriseDirectories", 
+      resourceUrl:"http://192.168.3.36:8083/api/purchaseRecords", //crud
+      listUrl:"http://192.168.3.36:8083/api/purchaseRecords",  //http://localhost:8083/api/purchaseRecords/search/findByUsername?username=swl
+      title : "标题",
+      uploadUrl:'http://192.168.3.2:8083/api/upload/',//文件上传
+      deleteUrl: "http://192.168.3.36:8083/api/delete/purchaseRecord"//单数
+    } 
+</script>
+<script src="/js/commonV3.js"></script>
+<script src="/js/crudLayout-bundle.js"></script>
+</html>
