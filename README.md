@@ -27,3 +27,6 @@ Springboot+SpringDataRest+SpringSecurity+React+Antd
 
 
 ## 展示截图
+
+![image](https://github.com/WaylonSong/crud_demo/blob/master/intro/WechatIMG239.jpeg)
+![image](https://github.com/WaylonSong/crud_demo/blob/master/intro/WechatIMG240.jpeg)
