@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @RepositoryEventHandler(HasUserName.class)
-public class NeedsOwnerHandler {
+public class HasUsernameHandler {
     @HandleBeforeCreate
     public void handlePurchaseRecordSave(HasUserName p) {
         // … you can now deal with Person in a type-safe way
@@ -26,6 +26,7 @@ public class NeedsOwnerHandler {
         if (username.equals("anonymousUser")){
             username = "";
         }
+        System.out.println(username);
         p.setUsername(username);
     }
 }

@@ -3,7 +3,7 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
 	<title>company</title>
-	<link rel="stylesheet" href="/css/newStyle.css"/>
+	<link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
   <div id="layout"></div>
@@ -11,13 +11,15 @@
 <script type="text/javascript" src="/js/menu.js"></script>
 <script th:inline="javascript">
   var user = [[${#httpServletRequest.remoteUser}]];
-  var role = [[${#httpServletRequest.isUserInRole("ROLE_ADMIN")}]];
+  var adminRole = [[${#httpServletRequest.isUserInRole("ROLE_ADMIN")}]];
   var listUrl;
-  if(role){
-    listUrl = "/api/enterpriseDirectories/search/findByUsername?name="+user;
+  if(adminRole){
+    listUrl = "/api/enterpriseDirectories?sort=createTime,desc";
   }else{
-    listUrl = "/api/enterpriseDirectories";
+    listUrl = "/api/enterpriseDirectories/search/findByUsername?name="+user;
+    listUrl += "&amp;sort=createTime,desc";
   }
+  console.log(listUrl)
 </script>
 <script type="text/javascript">
 //层级，｛标题，URL｝
@@ -26,16 +28,19 @@
          {
            title: '企业名称',
            dataIndex: 'enterpriseName',
+           key: 'enterpriseName',
            type:"input",
            notNull:true
          },{
            title: '经营范围',
            dataIndex: 'businessScope',
+           key: 'businessScope',
            type:"input",
            notNull:true
          },{
            title: '企业地址',
            dataIndex: 'enterpriseaddress',
+           key: 'enterpriseaddress',
            type:"input",
            notNull:true
          },{
@@ -47,11 +52,13 @@
          },{
            title: '联系方式',
            dataIndex: 'phone',
+           key: 'phone',
            type:"input",
            notNull:true
          },{
            title: '占地面积',
            dataIndex: 'areaCovered',
+           key: 'areaCovered',
            type:"input",
            notNull:true
          },{
@@ -63,6 +70,7 @@
          },{
            title: '总投资',
            dataIndex: 'totalInvestment',
+           key: 'totalInvestment',
            type:"inputNumber",
            notNull:true
          },{
@@ -74,10 +82,12 @@
          },{
            title: ' 种植面积',
            dataIndex: 'plantingArea',
+           key: 'plantingArea',
            type:"input",
            notNull:true
          },{
            title: '种植作物',
+           dataIndex: 'raiseCrops',
            dataIndex: 'raiseCrops',
            key: 'raiseCrops',
            type:"input",
@@ -85,6 +95,7 @@
          },{
            title: '营业执照',
            dataIndex: 'businessLicenseUrl',
+           key: 'businessLicenseUrl',
            type:"image",
            fileTypeList:"png,jpg,jpeg,gif,bmp,icon",
          },{
@@ -96,6 +107,7 @@
          },{
            title: '添加人',
            dataIndex: 'username',
+           key: 'username',
            type:"input",
            hiddenInAdd:true,
            notNull:true

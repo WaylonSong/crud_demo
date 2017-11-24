@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import com.example.demo.model.Person;
 import com.example.demo.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.RepositoryRestController;
 import org.springframework.hateoas.Resources;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -17,9 +18,10 @@ import static org.springframework.hateoas.mvc.ControllerLinkBuilder.linkTo;
 /**
  * Created by song on 2017/11/1.
  */
-//扩展API@RepositoryRestController
+//扩展API
 // a custom handler for a specific resource
 // return HATEOAS style json
+@RepositoryRestController
 public class CustomerController {
     @Autowired
     private PersonRepository personRepository;

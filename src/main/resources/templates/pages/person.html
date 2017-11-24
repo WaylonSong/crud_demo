@@ -2,7 +2,7 @@
 <html>
 <head>
 	<title>company</title>
-	<link rel="stylesheet" href="/css/newStyle.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
   <div id="layout"></div>
@@ -30,12 +30,13 @@
           },{
             title: 'gender',
             dataIndex: 'gender',
-            type:"input",
+            type:"radio",
+              options:[{value:"0", name:"Male"}, {value:"1",name:"Female"}], //待扩展成name-value
             notNull:true
           }
       ],
-      resourceUrl:"/api/persons", //crud
-      listUrl:"/api/persons",  //http://localhost:8083/api/purchaseRecords/search/findByUsername?username=swl
+      resourceUrl:"/api/persons",
+      listUrl:"/api/persons",
       title : "人员名录",
       uploadUrl:'/api/upload/',//文件上传
       deleteUrl: "/api/delete/person",//单数

@@ -2,10 +2,7 @@ package com.example.demo.model;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 /**
@@ -77,5 +74,8 @@ public class EnterpriseDirectory implements HasUserName {
      * 相当于SysUser外键,该demo没有用到用户关联
      */
     String username;
+
+    @Column(columnDefinition = "TIMESTAMP")
+    Date createTime;
 
 }
