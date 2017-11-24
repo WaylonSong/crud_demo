@@ -20,7 +20,7 @@ Springboot+SpringDataRest+SpringSecurity+React+Antd
 * 补充代码模板生成，通过反射、注解等自动生成实体页面入口数据。
 * 补充缓存使用、事件驱动等事例。
 
-## 使用办法
+## 使用方法
 * 请配置Properties中的Mysql地址，以及上传文件路径。
 * 运行SysUserRepositoryTest，生成事例管理员用户和一般用户。
 * 本事例提供三个实体，分别配置了权限检查和没有配置权限，以及实体关联关系。
